@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
+	kittelemetry "github.com/yosi-hq/go-backend-kit/telemetry"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/codes"
@@ -77,6 +78,7 @@ func TelemetryMiddleware(serviceName string) gin.HandlerFunc {
 
 		requestCount.Add(ctx, 1, metric.WithAttributes(attrs...))
 		requestLatency.Record(ctx, durationMs, metric.WithAttributes(attrs...))
+		kittelemetry.ObserveHTTPRequest(c.Request.Method, path, status, time.Since(start))
 	}
 }
 
