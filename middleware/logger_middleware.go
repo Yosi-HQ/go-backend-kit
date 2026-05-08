@@ -15,6 +15,11 @@ const (
 	RequestIDKey = "request_id"
 )
 
+// LoggerMiddleware creates a Gin logging middleware with a default logger.
+func LoggerMiddleware() gin.HandlerFunc {
+	return LoggerMiddlewareWith(nil)
+}
+
 func LoggerMiddlewareWith(base kitlog.Logger) gin.HandlerFunc {
 	if base == nil {
 		base = kitlog.New("production")
