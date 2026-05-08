@@ -40,7 +40,7 @@ This repository focuses on:
 ## Installation
 
 ```bash
-go get github.com/YOUR_USERNAME/go-backend-kit
+go get github.com/Yosi-HQ/go-backend-kit
 ```
 
 ---
@@ -51,9 +51,9 @@ go get github.com/YOUR_USERNAME/go-backend-kit
 package main
 
 import (
-    "github.com/YOUR_USERNAME/go-backend-kit/config"
-    "github.com/YOUR_USERNAME/go-backend-kit/database"
-    "github.com/YOUR_USERNAME/go-backend-kit/logger"
+    "github.com/Yosi-HQ/go-backend-kit/config"
+    "github.com/Yosi-HQ/go-backend-kit/database"
+    "github.com/Yosi-HQ/go-backend-kit/logger"
 )
 
 func main() {
